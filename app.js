@@ -16,7 +16,7 @@ app.get('/api/:temp/:humd', function(req, res) {
 
     var newPanahon = new Panahon({
         temperature: req.params.temp,
-        humidity: req.params.humidity
+        humidity: req.params.humd
     });
     
     newPanahon.save()
