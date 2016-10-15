@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/panahon');
 
 app.get('/api/:temp/:humd', function(req, res) {
     
-    console.log(`Data received, saving data: T: ${req.params.temp} / H: ${req.params.humd}`);
+    util.log(`Data received, saving data: T: ${req.params.temp} / H: ${req.params.humd}`);
 
     var newPanahon = new Panahon({
         temperature: req.params.temp,
