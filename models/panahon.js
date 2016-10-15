@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var PanahonSchema = new mongoose.Schema({
-    timeStamp: {type: Date, default: new Date()},
+    timeStamp: {type: Date, default: Date.now },
     temperature: String,
     humidity: String
 });
