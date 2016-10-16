@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --watch --output public/css node_modules/foundation-sites/scss/app.scss",
     "start": "nohup node app.js &"
   },
   "repository": {
@@ -24,7 +25,12 @@
   },
   "homepage": "https://github.com/armanvp/panahon-iot#readme",
   "dependencies": {
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8",
     "express": "^4.14.0",
+    "foundation-sites": "^6.2.4-rc2",
+    "moment": "^2.15.1",
     "mongoose": "^4.6.3"
   }
 }

@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Panahon IoT - Weather App</title>
+        <link rel="stylesheet" href="css/app.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <script src="modules/angular/angular.min.js"></script>
+        <script src="modules/angular-resource/angular-resource.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    
+    <body ng-cloak>
+    
+        <!-- Header Start -->
+        <header>
+            <!-- Top Bar Start -->
+            <div class="top-bar">
+                <div class="tob-bar-left">
+                    <ul class="menu">
+                        <li class="menu-text">
+                            <i class="fa fa-sun-o" aria-hidden="true"></i>
+                            Panahon - IoT
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+        </header>
+        <!-- Header End -->
+
+        <!-- Main Start -->
+        <section ng-controller="mainController as main">
+
+            <div class="row">
+                <div class="small-10 small-centered card columns">
+
+                    <!-- Tabs Start -->
+                    <ul class="tabs" data-tabs id="example-tabs">
+                        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true" ng-click="main.loadData()">Now</a></li>
+                        <li class="tabs-title"><a href="#panel2" ng-click="main.load24()">24 Hours</a></li>
+                        <li class="tabs-title"><a href="#panel2">7 Days</a></li>
+                    </ul>
+
+                    <div class="tabs-content" data-tabs-content="example-tabs">
+                    <div class="tabs-panel is-active" id="panel1">
+                        <small>Temperature</small>
+                        <h1>{{ main.data.temperature }}&deg;c</h1>
+                        <small>Humidity</small>
+                        <h1>{{ main.data.humidity }}&#37;</h1>
+                        <small ng-hide="main.hasError()">Updated on {{ main.data.update }}</small>
+                        <small ng-show="main.hasError()">Unable to fetch data: {{ main.data.error }}</small>
+                    </div>
+                    <div class="tabs-panel" id="panel2">
+                        <div id="chart24"></div>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 text-center column">
+                    <small>&copy; 2016 Panahon - IoT by Arman Pagilagan | <a href="http://armanvp.com" target="_new">http://armanvp.com</a></small>
+                </div>
+            </div>
+
+        </section>
+        <!-- Main End -->
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/what-input.min.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script>$(document).foundation();</script>
+        <script src="js/app.js"></script>
+        <script src="js/services/data.service.js"></script>
+        <script src="js/services/format.service.js"></script>
+        <script src="js/controllers/main.controller.js"></script>
+        <script src="js/app-charts.js"></script>
+
+  </body>
+</html>
