@@ -83,7 +83,7 @@ function mainController(ds, fs) {
                             color: '#fff'
                         }
                     },
-                    height: '500',
+                    height: '300',
                     backgroundColor: '#011622',
                     colors: ['#FFBE00','#FF7A00'],
                     fontName: 'Open Sans',
