@@ -41,21 +41,20 @@
                     <ul class="tabs" data-tabs id="example-tabs">
                         <li class="tabs-title is-active"><a href="#panel1" aria-selected="true" ng-click="main.loadData()">Now</a></li>
                         <li class="tabs-title"><a href="#panel2" ng-click="main.load24()">24 Hours</a></li>
-                        <li class="tabs-title"><a href="#panel2">7 Days</a></li>
                     </ul>
 
                     <div class="tabs-content" data-tabs-content="example-tabs">
-                    <div class="tabs-panel is-active" id="panel1">
-                        <small>Temperature</small>
-                        <h1>{{ main.data.temperature }}&deg;c</h1>
-                        <small>Humidity</small>
-                        <h1>{{ main.data.humidity }}&#37;</h1>
-                        <small ng-hide="main.hasError()">Updated on {{ main.data.update }}</small>
-                        <small ng-show="main.hasError()">Unable to fetch data: {{ main.data.error }}</small>
-                    </div>
-                    <div class="tabs-panel" id="panel2">
-                        <div id="chart24"></div>
-                    </div>
+                        <div class="tabs-panel is-active" id="panel1">
+                            <small>Temperature</small>
+                            <h1>{{ main.data.temperature }}&deg;c</h1>
+                            <small>Humidity</small>
+                            <h1>{{ main.data.humidity }}&#37;</h1>
+                            <small ng-hide="main.hasError()">Updated on {{ main.data.update }}</small>
+                            <small ng-show="main.hasError()">Unable to fetch data: {{ main.data.error }}</small>
+                        </div>
+                        <div class="tabs-panel" id="panel2">
+                            <div id="chart24"></div>
+                        </div>
                     </div>
 
                 </div>
