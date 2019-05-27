@@ -12,11 +12,11 @@ function dataService($resource) {
     return services;
 
     function getDataNow() {
-        return $resource('/api/data/now').get().$promise;
+        return $resource('api/data/now').get().$promise;
     }
 
     function getData24() {
-        return $resource('/api/data/24').query().$promise;
+        return $resource('api/data/24').query().$promise;
     }
 
 }
